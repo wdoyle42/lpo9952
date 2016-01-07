@@ -2,12 +2,12 @@ version 12 /* Can set version here, use the most recent as default */
 capture log close /* Closes any logs, should they be open */
 
 
-  log using "descriptives.log",replace /*Open up new log */
+  log using "conditional_means.log",replace /*Open up new log */
 
 /* Conditional Means*/
 /* Making the link between conditional means and regression */
 /* Will Doyle */
-/* 150106 */
+/* 160107 */
 /* Practicum Folder */
 
 clear matrix
@@ -49,7 +49,6 @@ local income byses1
 
 local coding=1
     
-
 /**************************************************/
 
 
@@ -196,7 +195,7 @@ else use plans2, clear
 /*Analysis*/
 /**************************************************/
 
- /*Using the mean as a prediction*/
+ //Using the mean as a prediction
 
 sort byses1
 
@@ -214,7 +213,7 @@ scalar uncond_mean_mse=r(mean)
 
 graph twoway (scatter bynels2m byses1,msize(vtiny) mcolor(black)) (line uncond_mean byses1,lcolor(blue)), legend(order(2 "Unconditional Mean"))
 
-/*Above average(median) vs. below average */
+// Above average(median) vs. below average 
 
 egen sesq2=cut(byses1), group(2)
 
@@ -233,7 +232,7 @@ graph twoway (scatter bynels2m byses1,msize(vtiny) mcolor(black)) ///
              (line cond_mean2 byses1,lcolor(orange)), ///
               legend(order(2 "Unconditional Mean" 3 "Condtional Mean, 2 groups") )
 
-/*Quartiles*/
+// Using quartiles as the basis for predictions
 
 egen sesq4=cut(byses1), group(4)
 
@@ -256,7 +255,7 @@ graph twoway (scatter bynels2m byses1,msize(vtiny) mcolor(black)) ///
              legend(order(2 "Unconditional Mean" 3 "Condtional Mean, 2 groups" 4 "Conditional Mean, 4 Groups") )
 
 
-/*Regression*/
+// Regression
 
 reg bynels2m byses1
 
@@ -280,7 +279,7 @@ graph twoway (scatter bynels2m byses1,msize(vtiny) mcolor(black)) ///
 
 scalar li
 
-
+//End
 
 
 
