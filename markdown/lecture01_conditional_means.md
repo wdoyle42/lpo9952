@@ -42,7 +42,7 @@ basis for a very large amount of policymaking.
     . graph export "../plots/uncond_mean.png",replace
     (file ../plots/uncond_mean.png written in PNG format)
 
-\[\]\[<https://github.com/wdoyle42/lpo9952/blob/master/plots/uncond_mean.png>\]
+![](https://github.com/wdoyle42/lpo9952/blob/master/plots/uncond_mean.png)
 \# Conditonal Means
 
 With condtional means, we start using more information to think about
