@@ -1,0 +1,78 @@
+---
+title: Conditional Means
+author: LPO 9952 | Spring 2016
+output: 
+  html_document:
+   toc: true
+   theme: cosmo
+   css: ./css/custom.css
+---
+
+
+```{r, echo = FALSE, message = FALSE}
+require(knitr)
+source('./r/stataknitrhelper.r')
+opts_chunk$set(echo = FALSE, message = FALSE, comment = NA)
+```
+
+```{r, engine = 'bash'}
+## run accompanying .do file to get log file for parsing
+stata -b -q do ../do/lecture01_conditional_means.do
+```
+
+```{r}
+## save log file in object
+lf <- 'lecture01_conditional_means.log'
+```
+
+In almost all of our work, we seek to make predictions about what will 
+happen under certain circumstances. Our basic tool for doing this is 
+the conditional mean. Today we'll make the link between conditional 
+means and regression.
+
+# Unconditional Means
+
+In most of our day-to-day thinking, we use unconditional means as the 
+basis for making predictions. For instance, if I asked you to predict 
+the temperature on June 1st of this year, you'd most likely simply say 
+it would be the average temperature for that day or that time of 
+year. 
+
+In the example below, I calculate the mean of math test scores in the 
+plans dataset and use it as a prediction. I calculate the error term,
+then calculate the mean squared error (which is exactly what it sounds 
+like) as a measure of how good this prediction is. As the graphic 
+shows, the mean is a pretty terrible predictor for most people.
+
+It's worth remembering though, that the unconditional mean serves as
+the basis for a very large amount of policymaking.
+
+
+```{r}
+start <- 'using the mean as a prediction'
+end <- 'Above average(median) vs. below average'
+writeLines(logparse(lf, start = start, end = end))
+```
+
+# Conditonal Means
+
+With condtional means, we start using more information to think about 
+how we will make our prediction. One of the simplest ways to do this 
+in a bivariate sense is to calculate the mean of the dependent 
+variable for individuals who are above average and below average. 
+
+
+```{r}
+start <- 'Above average(median) vs. below average'
+end <- 'Using quartiles as the basis for predictions'
+writeLines(logparse(lf, start = start, end = end))
+```
+
+```{r}
+start <- 'Using quartiles as the basis for predictions'
+end <- 'End'
+writeLines(logparse(lf, start = start, end = end))
+```
+
+
+
