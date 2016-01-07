@@ -39,8 +39,10 @@ basis for a very large amount of policymaking.
     . graph twoway (scatter bynels2m byses1,msize(vtiny) mcolor(black)) (line unco
     > nd_mean byses1,lcolor(blue)), legend(order(2 "Unconditional Mean"))
 
-Conditonal Means
-================
+    . graph export "../plots/uncond_mean.png",replace
+    (file ../plots/uncond_mean.png written in PNG format)
+
+\[\]\[../plots/uncond\_mean.png\] \# Conditonal Means
 
 With condtional means, we start using more information to think about
 how we will make our prediction. One of the simplest ways to do this in
@@ -68,8 +70,11 @@ individuals who are above average and below average.
     >               legend(order(2 "Unconditional Mean" 3 "Condtional Mean, 2 grou
     > ps") )
 
-Regression is the conditional means
-===================================
+    . graph export "../plots/cond_mean2.png",replace
+    (file ../plots/cond_mean2.png written in PNG format)
+
+Regression is the conditional mean
+==================================
 
 Regression is based on the idea of the expected value of y given,
 E(Y|X). If X can take on only two values, then regression will give two
@@ -101,6 +106,9 @@ predictions.
     >              (line cond_mean4 byses1,lcolor(yellow)), ///    
     >              legend(order(2 "Unconditional Mean" 3 "Condtional Mean, 2 group
     > s" 4 "Conditional Mean, 4 Groups") )
+
+    . graph export "../plots/cond_mean4.png",replace
+    (file ../plots/cond_mean4.png written in PNG format)
 
     . // Regression
     . reg bynels2m byses1
@@ -146,3 +154,6 @@ predictions.
     cond_mean4_mse =  .01528936
     cond_mean2_mse =  .01600496
     uncond_mean_mse =  .01832291
+
+    . graph export "../plots/cond_mean_regress.png",replace
+    (file ../plots/cond_mean_regress.png written in PNG format)
