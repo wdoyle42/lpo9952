@@ -42,7 +42,8 @@ basis for a very large amount of policymaking.
     . graph export "../plots/uncond_mean.png",replace
     (file ../plots/uncond_mean.png written in PNG format)
 
-\[\]\[../plots/uncond\_mean.png\] \# Conditonal Means
+\[\]\[<https://github.com/wdoyle42/lpo9952/blob/master/plots/uncond_mean.png>\]
+\# Conditonal Means
 
 With condtional means, we start using more information to think about
 how we will make our prediction. One of the simplest ways to do this in
