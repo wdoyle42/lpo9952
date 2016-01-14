@@ -1,7 +1,7 @@
 ---
 title: Conditional Means
 author: LPO 9952 | Spring 2016
-output: md_document
+output: html_document
 ---
 
 
@@ -52,7 +52,12 @@ writeLines(logparse(lf, start = start, end = end))
 ```
 
 
-![](https://github.com/wdoyle42/lpo9952/blob/master/plots/uncond_mean.png)
+![Just mean as prediction](http://willdoyle.us/public/lpo9952/lecture01/uncond_mean.png)
+
+## Quick Exercise
+
+Calculate and plot the conditional mean of the 
+
 # Conditonal Means
 
 With condtional means, we start using more information to think about 
@@ -67,7 +72,14 @@ end <- 'Using quartiles as the basis for predictions'
 writeLines(logparse(lf, start = start, end = end))
 ```
 
-#Regression is the conditional mean
+
+![Just mean as prediction](http://willdoyle.us/public/lpo9952/lecture01/cond_mean2.png)
+
+This logic can be continued-- we can break down the independent variable into increasingly small groups, then calculate the mean at each of those levels. 
+
+
+
+# Regression is the conditional mean
 
 Regression is based on the idea of the expected value of y given,
 E(Y|X). If X can take on only two values, then regression will give
