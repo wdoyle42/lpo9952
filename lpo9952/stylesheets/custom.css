@@ -1,0 +1,19 @@
+
+/* Linking hovering
+-------------------------------------------------- */
+
+a.iconlink:link, ul.header li a:link {
+    color: black;
+}
+
+a.iconlink:visited, ul.header li a:visited {
+    color: black;
+}
+
+a.iconlink:hover, ul.header li a:hover {
+    color: #39c;
+}
+
+a.iconlink:active, ul.header li a:active {
+    color: #39c;
+}
